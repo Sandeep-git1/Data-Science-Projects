@@ -1,4 +1,4 @@
-# Data-Science-Proejects
+# Data-Science-Projects
  A developing portfolio of data science projects featuring machine learning applications and real-world data analysis.
 
 Welcome to my Data Science Project repository! This is a developing portfolio of data science projects featuring machine learning applications and real-world data analysis. Each project demonstrates my progression in applying analytical techniques, statistical modeling, and machine learning algorithms to tackle practical challenges.
