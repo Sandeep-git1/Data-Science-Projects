@@ -1,1 +1,19 @@
+Banking Data Analysis:
+This repository contains a Jupyter notebook (PBI1_Banking.ipynb) for performing Exploratory Data Analysis (EDA) on banking customer data. The data is retrieved from a MySQL database, loaded into a Pandas DataFrame, and analyzed using various statistical and visualization techniques.
+
+Project Overview:
+  The notebook demonstrates:
+      -Connecting to a local MySQL database (bankingcase) and querying the customer table.
+      -Basic data exploration: viewing data shape, info, summary statistics, and head/tail.
+      -Univariate analysis: Binning numerical features (e.g., Estimated Income into Low/Med/High categories) and generating value counts.
+      -Categorical feature analysis: Value counts and visualizations for columns like BRId, GenderId, Nationality, Occupation, Fee Structure, Loyalty Classification, Properties Owned, Risk Weighting, and more.
+      -Visualizations: Bar plots and count plots (with hue for categorical comparisons, e.g., by GenderId).
+The dataset includes customer details such as age, location, nationality, occupation, financial metrics (e.g., deposits, loans, credit card balances), and risk classifications.
+
+Data Insights:
+    -Dataset size: 3000 rows, 25 columns.
+    -Key features: Age (17-85), Estimated Income (~16k-522k), Bank Deposits, Loans, Risk Weighting (1-5), etc.
+    -Categorical distributions: E.g., Majority in "Jade" loyalty class; Europeans are the most common nationality.
+
+@Sandeep Patro, MTech ICT, Gandhinagar.
 
