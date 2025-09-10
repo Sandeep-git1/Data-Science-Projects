@@ -15,6 +15,15 @@ Data Insights:
     -Key features: Age (17-85), Estimated Income (~16k-522k), Bank Deposits, Loans, Risk Weighting (1-5), etc.
     -Categorical distributions: E.g., Majority in "Jade" loyalty class; Europeans are the most common nationality.
 
+THE ART OF DASHBOARDING :
+  Before starting working on Power BI-
+      1. Manually review the data and decide on the approximate number of pages you’ll need for your dashboard.
+      2. Create a rough layout using an online design tool such as Canva to visualize your ideas.
+      3. Recreate the design in Power BI, using your sketch as a reference.
+      4. Layout of hte dashboard can be different from people to people.
+      5. Dashboards should be designed with the client in mind, focusing on their needs rather than personal preferences. 
+
+
 Best,
 Sandeep Patro
 
