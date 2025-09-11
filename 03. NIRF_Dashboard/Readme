@@ -1,0 +1,25 @@
+Uploading.....
+
+
+NIRF Ranking Dashboard & Prediction
+
+This project builds an interactive Power BI dashboard to analyze NIRF (National Institutional Ranking Framework) rankings and predict future rankings (e.g., 2027).
+- Features
+      Web Scraping: Extracts NIRF ranking data from official site (HTML & PDFs).
+      Data Cleaning: Structured dataset with attributes like TLR, RPC, GO, OI, Perception.
+      Dashboard: Power BI visuals, institute comparisons, trends, and insights.
+      Machine Learning: Predicts future rankings using models (Random Forest / XGBoost).
+      Use Case: Institutes can benchmark performance and explore “whatif” scenarios.
+- Workflow
+      Scrape Dat → Python (BeautifulSoup, Camelot/Tabula).
+      Transform Data → Power BI Power Query.
+      Visualize → Interactive dashboard (trends, comparisons).
+      Predict → ML model integrated with Power BI (Python script / Azure ML API).
+- Tech Stack
+      Python: Data scraping & ML.
+      Power BI: Dashboard & analytics.
+      Pandas, Scikit-learn, BeautifulSoup data + ML.
+-Future Scope
+      Extend to other categories (Overall, Universities, Management).
+      Automate yearly updates from NIRF.
+      Add ranking simulation based on attribute improvements.
