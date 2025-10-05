@@ -5,3 +5,9 @@ some information:
 2. Symptoms include rapid heart rate, difficulty breathing, and dizziness.
 3. They can happen without warning or an obvious cause.
 4. Frequent attacks may lead to panic disorder, where there's a constant fear of future episodes.
+
+Data Transformation steps:
+1. In the dataset, we need to add a new column named "panic_attack(HML)". 
+   This column will categorize the existing "panic_attack" column values into three levels: High, Medium, and Low.
+2. It has been identified that the values in the "Heart_rate" column were recorded incorrectly. To correct this, 
+  we will use the "standard" measure in Power BI to subtract 1 from each value in the "Heart_rate" column.
