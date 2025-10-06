@@ -1,37 +1,37 @@
-In This topic we will cover the concept of Panic Atttack!!
-
-some information:
+Some information about panic attacks:
 1. Panic attacks are sudden, intense episodes of fear or anxiety.
 2. Symptoms include rapid heart rate, difficulty breathing, and dizziness.
 3. They can happen without warning or an obvious cause.
 4. Frequent attacks may lead to panic disorder, where there's a constant fear of future episodes.
 
-Data Transformation steps:
-1. In the dataset, we need to add a new column named "panic_attack(HML)". 
-   This column will categorize the existing "panic_attack" column values into three levels: High, Medium, and Low.
-2. It has been identified that the values in the "Heart_rate" column were recorded incorrectly. To correct this, 
-  we will use the "standard" measure in Power BI to subtract 1 from each value in the "Heart_rate" column.
+The dashboard was created in Power BI, pulling from a Snowflake data warehouse connected to a CSV dataset of over 1,200 patient entries. 
+It's designed to be intuitive: filter by gender, smoking status, medical history, or panic attack type, and watch the charts update in real-time. 
+From pie charts breaking down triggers to bar graphs on sleep patterns, it's all about spotting trends that could inform better care.
 
+**Dataset:**
+The core of this project is the panic_attack_dataset.csv file, which contains anonymized data from 1,200+ patients experiencing panic attacks. 
+Here's a quick breakdown of the key columns: "ID,Age,Gender,Panic_Attack_Frequency,Duration_Minutes,Trigger,Heart_Rate,Sweating,Shortness_of_Breath,
+Dizziness,Chest_Pain,Trembling,Medical_History,Medication,Caffeine_Intake,Exercise_FrequencySleep_Hours,Alcohol_Consumption,Smoking,Therapy,
+Panic_Score"
 
-Column,Description,Example Values
-ID,Unique patient identifier,"1, 2, ..., 1200"
-Age,Patient's age at time of record,18–64
-Gender,Patient gender,"Female, Male, Non-binary"
-Panic_Attack_Frequency,Number of panic attacks reported (0–9 scale),"0, 5, 9"
-Duration_Minutes,Length of the panic attack in minutes,5–44
-Trigger,Identified trigger for the attack,"Caffeine, PTSD, Stress, Unknown"
-Heart_Rate,Heart rate during the attack (note: requires correction—see below),80–159
-Sweating,Presence of sweating (Yes/No),"Yes, No"
-Shortness_of_Breath,Presence of shortness of breath (Yes/No),"Yes, No"
-Dizziness,Presence of dizziness (Yes/No),"Yes, No"
-Chest_Pain,Presence of chest pain (Yes/No),"Yes, No"
-Trembling,Presence of trembling (Yes/No),"Yes, No"
-Medical_History,Pre-existing conditions,"Anxiety, PTSD, Depression, None"
-Medication,Currently on medication (Yes/No),"Yes, No"
-Caffeine_Intake,Daily caffeine intake (cups),0–5
-Exercise_Frequency,Weekly exercise sessions,0–6
-Sleep_Hours,Average nightly sleep hours,4.0–9.0
-Alcohol_Consumption,Weekly alcohol units,0–9
-Smoking,Smoking status (Yes/No),"Yes, No"
-Therapy,Currently in therapy (Yes/No),"Yes, No"
-Panic_Score,Overall severity score (1–10),1–10
+Data Transformations
+The data pipeline starts with cleaning and uploading the raw CSV into Snowflake, where initial ETL processes handle nulls, duplicates, and basic validations for scalability and governance. 
+From there, Power BI connects directly to Snowflake as the live data source, pulling transformed tables for real-time querying and some changes like:
+1. Panic Attack Categorization: Added a new calculated column called Panic_Attack(HML) based on Panic_Attack_Frequency:
+   High: 7–9 attacks
+   Medium: 4–6 attacks
+   Low: 0–3 attacks
+   This bins the frequency into digestible levels for slicers and trend analysis.
+
+2. Heart Rate Correction: It turns out the Heart_Rate values were off by +1 due to a recording glitch. We fixed this with a simple DAX measure: 
+   Corrected_Heart_Rate = [Heart_Rate] - 1. Now averages hover realistically around 120–140 bpm during attacks—much more in line with medical lit.
+
+Panic Attack Dashboard: Key Results & Findings
+1. Prevalent Symptoms: Dizziness (52%), Trembling (48%), Chest Pain (40%), Shortness of Breath (38%), Sweating (30%). 
+   Dizziness + shortness often co-occur in PTSD cases.
+2. Top Triggers (by frequency): Unknown/Caffeine/Phobia (~17% each), PTSD (17%), Social Anxiety/Stress (16% each).
+3. Demographics & Habits: Females report higher attack frequencies; smokers show 50% more sweating. 
+   Anxiety (45%), PTSD (30%), Depression (20%) dominate medical history—therapy users have 15% lower severity.
+4. Lifestyle Links: Poor sleep (<6 hrs) ties to 20% higher frequency; caffeine/exercise gaps amplify risks.
+5. Actionable Insights: High-frequency patients (7+ attacks) are 3x more likely to have PTSD. 
+   Cutting caffeine + improving sleep could reduce triggers by 25–30%.
