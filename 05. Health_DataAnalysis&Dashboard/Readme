@@ -1,43 +1,55 @@
-# Panic Attack Analysis Dashboard
-
-## Overview
-
-Welcome to the **Panic Attack Analysis and Dashboard** project! This is a data-driven exploration into panic attacks, built using a dataset of patient records to uncover patterns in symptoms, triggers, and lifestyle factors. Whether you're a researcher, healthcare professional, or just curious about mental health analytics, this dashboard provides interactive visualizations to help make sense of the chaos that panic attacks can bring.
-
-**Some information about panic attacks:**  
-1. Panic attacks are sudden, intense episodes of fear or anxiety.  
-2. Symptoms include rapid heart rate, difficulty breathing, and dizziness.  
-3. They can happen without warning or an obvious cause.  
-4. Frequent attacks may lead to panic disorder, where there's a constant fear of future episodes.
-
-The dashboard was created in Power BI, pulling from a Snowflake data warehouse connected to a CSV dataset of over 1,200 patient entries.  
-It's designed to be intuitive: filter by gender, smoking status, medical history, or panic attack type, and watch the charts update in real-time.  
-From pie charts breaking down triggers to bar graphs on sleep patterns, it's all about spotting trends that could inform better care.
-
-## Dataset
-
-The core of this project is the `panic_attack_dataset.csv` file, which contains anonymized data from 1,200+ patients experiencing panic attacks.  
-Here's a quick breakdown of the key columns: ID,Age,Gender,Panic_Attack_Frequency,Duration_Minutes,Trigger,Heart_Rate,Sweating,Shortness_of_Breath,Dizziness,Chest_Pain,Trembling,Medical_History,Medication,Caffeine_Intake,Exercise_FrequencySleep_Hours,Alcohol_Consumption,Smoking,Therapy,Panic_Score.
-
-## Data Transformations
-
-The data pipeline starts with cleaning and uploading the raw CSV into Snowflake, where initial ETL processes handle nulls, duplicates, and basic validations for scalability and governance.  
-From there, Power BI connects directly to Snowflake as the live data source, pulling transformed tables for real-time querying and some changes like:  
-1. **Panic Attack Categorization**: Added a new calculated column called `Panic_Attack(HML)` based on `Panic_Attack_Frequency`:  
-   - **High**: 7–9 attacks  
-   - **Medium**: 4–6 attacks  
-   - **Low**: 0–3 attacks  
-   This bins the frequency into digestible levels for slicers and trend analysis.  
-2. **Heart Rate Correction**: It turns out the `Heart_Rate` values were off by +1 due to a recording glitch. We fixed this with a simple DAX measure:  
-   `Corrected_Heart_Rate = [Heart_Rate] - 1`. Now averages hover realistically around 120–140 bpm during attacks—much more in line with medical lit.
-
-## Panic Attack Dashboard: Key Results & Findings
-
-1. **Prevalent Symptoms**: Dizziness (52%), Trembling (48%), Chest Pain (40%), Shortness of Breath (38%), Sweating (30%).  
-   Dizziness + shortness often co-occur in PTSD cases.  
-2. **Top Triggers** (by frequency): Unknown/Caffeine/Phobia (~17% each), PTSD (17%), Social Anxiety/Stress (16% each).  
-3. **Demographics & Habits**: Females report higher attack frequencies; smokers show 50% more sweating.  
-   Anxiety (45%), PTSD (30%), Depression (20%) dominate medical history—therapy users have 15% lower severity.  
-4. **Lifestyle Links**: Poor sleep (<6 hrs) ties to 20% higher frequency; caffeine/exercise gaps amplify risks.  
-5. **Actionable Insights**: High-frequency patients (7+ attacks) are 3x more likely to have PTSD.  
-   Cutting caffeine + improving sleep could reduce triggers by 25–30%.
+ Panic Attack Analysis Dashboard
+ Overview
+ Overview
+ Welcome to the Panic Attack Analysis and Dashboard
+ Panic Attack Analysis and Dashboard project! This is a data-driven exploration into panic attacks, built using a dataset of patient records to uncover patterns in symptoms, triggers, and lifestyle factors. Whether you're a researcher, healthcare
+ professional, or just curious about mental health analytics, this dashboard provides interactive visualizations to help make sense of the chaos that panic attacks can bring.
+ Some information about panic attacks:
+ Some information about panic attacks:
+ 1. Panic attacks are sudden, intense episodes of fear or anxiety.
+ 2. Symptoms include rapid heart rate, difficulty breathing, and dizziness.
+ 3. They can happen without warning or an obvious cause.
+ 4. Frequent attacks may lead to panic disorder, where there's a constant fear of future episodes.
+ The dashboard was created in Power BI, pulling from a Snowflake data warehouse connected to a CSV dataset of over 1,200 patient entries.
+ It's designed to be intuitive: filter by gender, smoking status, medical history, or panic attack type, and watch the charts update in real-time.
+ From pie charts breaking down triggers to bar graphs on sleep patterns, it's all about spotting trends that could inform better care.
+ Dataset
+ Dataset
+ The core of this project is the 
+panic_attack_dataset.csv file, which contains anonymized data from 1,200+ patients experiencing panic attacks.
+ Here's a quick breakdown of the key columns:
+ ID,Age,Gender,Panic_Attack_Frequency,Duration_Minutes,Trigger,Heart_Rate,Sweating,Shortness_of_Breath,Dizziness,Chest_Pain,Trembling,Medical_History,Medication,Caffeine_Intake,Exercise_FrequencySleep_Hours,Alcohol_Consumption,Smoking,Therapy,Panic_Score.
+ Data Transformations
+ Data Transformations
+ The data pipeline starts with cleaning and uploading the raw CSV into Snowflake, where initial ETL processes handle nulls, duplicates, and basic validations for scalability and governance.
+ From there, Power BI connects directly to Snowflake as the live data source, pulling transformed tables for real-time querying and some changes like:
+ 1. Panic Attack Categorization
+ Panic Attack Categorization: Added a new calculated column called 
+Panic_Attack(HML) based on 
+High
+ High: 7–9 attacks
+ Medium
+ Medium: 4–6 attacks
+ Low
+ Low: 0–3 attacks
+ This bins the frequency into digestible levels for slicers and trend analysis.
+ 2. Heart Rate Correction
+ Heart Rate Correction: It turns out the 
+Panic_Attack_Frequency :
+ Heart_Rate values were off by +1 due to a recording glitch. We fixed this with a simple DAX measure:
+ Corrected_Heart_Rate = [Heart_Rate] - 1 . Now averages hover realistically around 120–140 bpm during attacks—much more in line with medical lit.
+ Panic Attack Dashboard: Key Results & Findings
+ Panic Attack Dashboard: Key Results & Findings
+ 1. Prevalent Symptoms
+ Prevalent Symptoms: Dizziness (52%), Trembling (48%), Chest Pain (40%), Shortness of Breath (38%), Sweating (30%).
+ Dizziness + shortness often co-occur in PTSD cases.
+ 2. Top Triggers
+ Top Triggers (by frequency): Unknown/Caffeine/Phobia (~17% each), PTSD (17%), Social Anxiety/Stress (16% each).
+ 3. Demographics & Habits
+ Demographics & Habits: Females report higher attack frequencies; smokers show 50% more sweating.
+ Anxiety (45%), PTSD (30%), Depression (20%) dominate medical history—therapy users have 15% lower severity.
+ 4. Lifestyle Links
+ Lifestyle Links: Poor sleep (<6 hrs) ties to 20% higher frequency; caffeine/exercise gaps amplify risks.
+ 5. Actionable Insights
+ Actionable Insights: High-frequency patients (7+ attacks) are 3x more likely to have PTSD.
+ Cutting caffeine + improving sleep could reduce triggers by 25–30%
