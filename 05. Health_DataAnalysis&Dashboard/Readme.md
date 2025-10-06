@@ -92,8 +92,7 @@ Resulting average heart rate during attacks: **120–140 bpm**.
 
 ## Actionable Insights
 
-- Patients with **high-frequency attacks (7+)** are:
-- **3x more likely** to have PTSD
+- Patients with **high-frequency attacks (7+)** are: **3x more likely** to have PTSD
 - Reducing caffeine and improving sleep can lower panic triggers by **25–30%**
 
 ---
