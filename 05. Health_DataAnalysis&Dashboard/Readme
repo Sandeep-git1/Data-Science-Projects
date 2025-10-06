@@ -11,3 +11,27 @@ Data Transformation steps:
    This column will categorize the existing "panic_attack" column values into three levels: High, Medium, and Low.
 2. It has been identified that the values in the "Heart_rate" column were recorded incorrectly. To correct this, 
   we will use the "standard" measure in Power BI to subtract 1 from each value in the "Heart_rate" column.
+
+
+Column,Description,Example Values
+ID,Unique patient identifier,"1, 2, ..., 1200"
+Age,Patient's age at time of record,18–64
+Gender,Patient gender,"Female, Male, Non-binary"
+Panic_Attack_Frequency,Number of panic attacks reported (0–9 scale),"0, 5, 9"
+Duration_Minutes,Length of the panic attack in minutes,5–44
+Trigger,Identified trigger for the attack,"Caffeine, PTSD, Stress, Unknown"
+Heart_Rate,Heart rate during the attack (note: requires correction—see below),80–159
+Sweating,Presence of sweating (Yes/No),"Yes, No"
+Shortness_of_Breath,Presence of shortness of breath (Yes/No),"Yes, No"
+Dizziness,Presence of dizziness (Yes/No),"Yes, No"
+Chest_Pain,Presence of chest pain (Yes/No),"Yes, No"
+Trembling,Presence of trembling (Yes/No),"Yes, No"
+Medical_History,Pre-existing conditions,"Anxiety, PTSD, Depression, None"
+Medication,Currently on medication (Yes/No),"Yes, No"
+Caffeine_Intake,Daily caffeine intake (cups),0–5
+Exercise_Frequency,Weekly exercise sessions,0–6
+Sleep_Hours,Average nightly sleep hours,4.0–9.0
+Alcohol_Consumption,Weekly alcohol units,0–9
+Smoking,Smoking status (Yes/No),"Yes, No"
+Therapy,Currently in therapy (Yes/No),"Yes, No"
+Panic_Score,Overall severity score (1–10),1–10
