@@ -1,0 +1,13 @@
+ProductID,ProductName,Category,Cost
+P001,Laptop,Computers,50000
+P002,Desktop,Computers,40000
+P003,Monitor,Computers,10000
+P004,Keyboard,Accessories,2000
+P005,Mouse,Accessories,1000
+P006,Printer,Accessories,15000
+P007,Tablet,Computers,25000
+P008,Smartphone,Mobile,30000
+P009,Headphones,Accessories,2000
+P010,Speaker,Accessories,3000
+P011,Router,Networking,5000
+P012,Webcam,Accessories,4000
