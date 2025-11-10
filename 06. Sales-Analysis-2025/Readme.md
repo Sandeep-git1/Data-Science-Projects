@@ -35,8 +35,8 @@ The analysis confirms a strong year with balanced profit performance.
 
 | Key Metric | Value | Insight |
 | :--- | :--- | :--- |
-| **Total Revenue** | $201,784,000.00 | High volume and high-value transactions drove the total. |
-| **Total Profit** | $19,350,661.30 | Solid profit delivery across core product categories. |
+| **Total Revenue** | $5,03,29,13,420.00| High volume and high-value transactions drove the total. |
+| **Total Profit** | $5,03,10,89,08,661.30 | Solid profit delivery across core product categories. |
 | **Profit Margin %** | **9.59%** | Demonstrates healthy cost management relative to sales price. |
 
 ### 2. Product and Sales Trend Analysis
